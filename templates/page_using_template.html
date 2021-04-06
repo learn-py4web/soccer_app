@@ -1,0 +1,29 @@
+[[extend 'layout.html']]
+
+<section class="section">
+
+  <h1 class="title">Soccer table</h1>
+
+  <h2 class="subtitle">Year: [[=year]]</h2>
+
+
+  <table class="table">
+    <thead>
+      [[for h in headers:]]
+      <th>[[=h]]</th>
+      [[pass]]
+    </thead>
+    <tbody>
+    [[for r in rows:]]
+      <tr>
+      [[for h in headers:]]
+        <td>[[=r[h] ]]</td>
+      [[pass]]
+      </tr>
+    [[pass]]
+    </tbody>
+  </table>
+
+
+</section>
+
