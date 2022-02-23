@@ -35,13 +35,13 @@ from .models import get_user_email
 url_signer = URLSigner(session)
 
 @action('index')
-@action.uses(db, auth, 'index.html')
+@action.uses('index.html', db, auth)
 def index():
     print("User:", get_user_email())
     return dict()
 
 @action('soccer-page')
-@action.uses(db, auth, 'page_using_template.html')
+@action.uses('page_using_template.html', db, auth)
 def serve_soccer():
     print("Yes, I am really serving a page.")
     y = random.randint(1980, 2020)
